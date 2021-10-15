@@ -1,3 +1,31 @@
-
-
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap');
+.section{
+    width:100vw;
+    height: 450px;
+    background: no-repeat url('vegstock_edited.jpg') ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.section h1{
+text-align: center;
+margin-bottom: 100px;
+margin-left: 250px;
+font-size: 200px;
+font-family: 'Caveat', cursive;
+color: white;
+}
+.bottom-heading{
+    width: 100%;
+    background-color: #212529;
+    height: 70px;
+    margin-top: 50px;
+}
+.bottom-heading h1{
+font-size: 50px;
+}
+.btn2{
+    margin: auto 15px;
+}
 
