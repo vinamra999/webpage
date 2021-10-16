@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gluten&display=swap');
 .section{
     width:100vw;
     height: 450px;
@@ -28,4 +29,65 @@ font-size: 50px;
 .btn2{
     margin: auto 15px;
 }
-
+.food_word{
+    color: orangered;
+}
+.input{
+    display: flex;
+    flex-direction: row;
+    margin: 10px auto;
+}
+#input_text{
+    width: 600px;
+    font-size: 27px;
+    margin: 20px 20px 20px 20px ;
+    height: 50px;
+    border-radius: 10px;
+}
+#submit_btn{
+    width: 80px;
+    height: 47px;
+    margin: 20px 5px;
+    background-color: orangered;
+    border-radius: 20px;
+}
+.inputdata{
+    display: flex;
+    justify-content: center;
+    height: 460px;
+    width: fit-content;
+    border: 2px solid black;
+    margin: 10px auto;
+    padding: 20px;
+    border-radius: 15px;
+}
+.food_data_heading{
+    font-size: 70px;
+    text-align: center;
+    margin: 30px auto;
+    font-family: 'Gluten', cursive;
+}
+/* underline animation code for nav btn */
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: #fa4700;
+  }
+  
+  .hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ff470f;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
