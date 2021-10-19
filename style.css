@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gluten&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
 .section{
     width:100vw;
     height: 450px;
@@ -91,3 +92,54 @@ font-size: 50px;
     transform: scaleX(1);
     transform-origin: bottom left;
   }
+  .about_heading{
+      color:rgb(5, 5, 26);
+      text-align: center;
+      margin: 20px auto;
+      font-family: 'Libre Baskerville', serif;
+      text-decoration: underline rgb(255, 51, 0);
+      font-size: 50px;
+  }
+  /* about text animation */
+  @import url("https://fonts.googleapis.com/css?family=Open+Sans:700");
+
+.wrapper {
+  list-style: none;
+  font-weight: 500;
+  font-size: clamp(2rem, 3vw, 3rem);
+  text-align: center;
+}
+
+.wrapper li a {
+  color: inherit;
+  text-underline-offset: var(--offset, 0.1em);
+  text-decoration: underline 0.1em;
+  transition: --offset 400ms, text-decoration-color 400ms;
+}
+
+.wrapper li a:hover,
+.wrapper li a:focus {
+  --offset: 0.4em;
+  text-decoration-color: rgb(226, 34, 0);
+}
+
+
+    .wrapper li a {
+    transition: text-underline-offset 400ms, text-decoration-color 400ms;
+  }
+  
+  .wrapper li a:hover,
+  .wrapper li a:focus {
+    text-underline-offset: 0.4em;
+  }
+
+.wrapper {
+  min-height: 100vh;
+  width: 100%;
+  max-width: 50rem;
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+}
