@@ -41,26 +41,27 @@ font-size: 50px;
 #input_text{
     width: 600px;
     font-size: 27px;
-    margin: 20px 20px 20px 20px ;
+    /* margin: 20px 20px 20px 20px ; */
     height: 50px;
     border-radius: 10px;
 }
 #submit_btn{
     width: 80px;
     height: 47px;
-    margin: 20px 5px;
+    margin: 0px 5px;
     background-color: orangered;
     border-radius: 20px;
 }
 .inputdata{
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     height: 460px;
     width: fit-content;
     border: 2px solid black;
     margin: 10px auto;
     padding: 20px;
     border-radius: 15px;
+    flex-direction: column;
 }
 .food_data_heading{
     font-size: 70px;
@@ -134,7 +135,7 @@ font-size: 50px;
   }
 
 .wrapper {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   width: 100%;
   max-width: 50rem;
   margin: 20px auto;
@@ -142,4 +143,31 @@ font-size: 50px;
   flex-wrap: wrap;
   justify-content: center;
   
+}
+.container{
+  top: 10px;
+}
+#para-output1{
+  text-align: center;
+}
+#para-output2{
+  text-align: center;
+}
+.box1{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* align-items: center; */
+}
+.outputdata{
+  visibility: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.form_input{
+  margin: 0px;
+}
+.outputbox{
+  margin: 10px;
 }

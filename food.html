@@ -34,7 +34,7 @@
                 </ul>
             </div>
         </div>
-        <form class="d-flex">
+        <form class="d-flex form_input">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn2 btn btn-outline-success" type="submit">Search</button>
           </form>
@@ -44,14 +44,79 @@
     <div class="inputdata">
 
         <form action="" id="inputData" class="input">
-            <input type="text" id="input_text" placeholder=" Please Enter Food Name">
-            <button type="submit" id="submit_btn" >submit </button>
+            <input type="text" id="input_text" placeholder="Please Enter Food Name" autocomplete="off">
+            <button type="submit" id="submit_btn" value="search">submit </button>
         </form>
         <div class="outputdata">
+            <div class="img"> <img src="" height="250px" width="250px" id="myImageID" alt="img">
+                <h1 id=para-output1> </h1>
+            </div>
+           <div class="outputbox">
+            <div class="box1"> <h1 id=para-output3>Energy :</h1> <h1 id=para-output3_1> </h1> <pre><h2><sub>kcal </sub></h2></pre>   </div>
+            <div class="box1"> <h1 id=para-output4>Protein :</h1> <h1 id=para-output4_1> </h1> <pre><h2><sub>g </sub></h2></pre></div>
+            <div class="box1"> <h1 id=para-output5>Fat :</h1> <h1 id=para-output5_1> </h1> <pre><h2><sub>g </sub></h2></pre> </div>
+            <div class="box1"> <h1 id=para-output6>Carbs :</h1> <h1 id=para-output6_1> </h1> <pre><h2><sub>g </sub></h2></pre> </div>
+            <div class="box1"> <h1 id=para-output6>Fiber :</h1> <h1 id=para-output7_1> </h1> <pre><h2><sub>g</sub></h2></pre> </div>
+        </div>
+            
             
         </div>
     </div>
 </body>
+<script >
+    submit_btn.addEventListener('click', async(event) => {
+        event.preventDefault();
+        
+        let Text =   document.querySelector('#para-output1');
+        let food_value = input_text.value;
+        console.log(food_value);
+        if(food_value==""){
+            Text.innerText ='please enter your food....';
+        }else{
+            fetch(`https://edamam-food-and-grocery-database.p.rapidapi.com/parser?ingr=${food_value}`, {
+                "method": "GET",
+                "headers": {
+                    "x-rapidapi-host": "edamam-food-and-grocery-database.p.rapidapi.com",
+                    "x-rapidapi-key": "220a73f2e6msh0eaa76439d0b2b5p16b231jsna6f7a5b78fcb"
+                }
+            })
+            .then(async (response)  => {
+                // console.log(response)
+                
+                const input_text = document.getElementById('input_text');
+                const data = await response.json();
+                console.log(data);
+                Text.innerText = data.text;
+                document.querySelector('.outputdata').style.visibility = 'visible';
+                
+                document.getElementById('para-output3_1').innerText = data.parsed[0].food.nutrients.ENERC_KCAL ;
+                document.getElementById('para-output4_1').innerText = data.parsed[0].food.nutrients.PROCNT ;
+                document.getElementById('para-output5_1').innerText = data.parsed[0].food.nutrients.FAT ;
+                document.getElementById('para-output6_1').innerText = data.parsed[0].food.nutrients.CHOCDF ;
+                document.getElementById('para-output7_1').innerText = data.parsed[0].food.nutrients.FIBTG ;
+                console.log(data.parsed[3])
+                    img= document.getElementById('myImageID')
+                img.setAttribute("src", data.parsed[0].food.image);
+                
+            //  "ENERC_KCAL": 52,
+            // "PROCNT": 0.26,
+            // "FAT": 0.17,
+            // "CHOCDF": 13.81,
+            // "FIBTG": 2.4 
+           
+           
+        
+})
+.catch(error => {
+	console.error(error)
+})
+    }
+
+})
+
+
+
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
